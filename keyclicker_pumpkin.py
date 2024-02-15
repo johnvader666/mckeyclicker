@@ -126,10 +126,9 @@ def myKeyClicker():
 
 if __name__ == '__main__':
 
-    yLimit = 68.00
-    y = 1
-
     while True:
+        yLimit = 68.00
+        y = 1
         time.sleep(2)
         #start keyclicker ....
         # Create a new process
@@ -167,6 +166,5 @@ if __name__ == '__main__':
                 print("Termination Failed")
             #enter command in minecraft
             mcCommand()
-            y= 1
             #wait a few seconds
             time.sleep(2)
