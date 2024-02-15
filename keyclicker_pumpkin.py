@@ -34,7 +34,7 @@ def mcCommand ():
     time.sleep(loadingtime2)
     pyautogui.press('r')
 
-def serverDisconnect ():
+def serverReconnect ():
     time.sleep(3)
     pyautogui.press('r')
     pyautogui.mouseUp(button='left')
@@ -121,7 +121,7 @@ def myKeyClicker():
             time.sleep(waitingtimeW2)
             pyautogui.keyUp('w')
             currentruntime = time.time() - startime
-        serverDisconnect()
+        serverReconnect()
         time.sleep(60)
 
 if __name__ == '__main__':
@@ -153,7 +153,7 @@ if __name__ == '__main__':
                     #terminate everything...
                     print("Failed to get y pos second time! Disconnect started.") 
                     keyClickerProcess.terminate() 
-                    serverDisconnect()
+                    serverReconnect()
                     time.sleep(60)
                     break
         else:
