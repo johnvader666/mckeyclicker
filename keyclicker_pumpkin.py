@@ -152,20 +152,21 @@ if __name__ == '__main__':
                     y = getY()
                 except Exception as e2:
                     #terminate everything...
-                    print("Trying getY failed second time! Program terminated.") 
+                    print("Failed to get y pos second time! Disconnect started.") 
                     keyClickerProcess.terminate() 
-                    sys.exit(1)
-
-
-        # y > limit!
-        #stop keyclicker
-        keyClickerProcess.terminate() 
-        if not keyClickerProcess.is_alive():
-             print("successfully Terminated")  
+                    serverDisconnect()
+                    time.sleep(60)
+                    break
         else:
-            print("Termination Failed")
-        #enter command in minecraft
-        mcCommand()
-        y= 1
-        #wait a few seconds
-        time.sleep(2)
+            # y > limit!
+            #stop keyclicker
+            keyClickerProcess.terminate() 
+            if not keyClickerProcess.is_alive():
+                print("successfully Terminated")  
+            else:
+                print("Termination Failed")
+            #enter command in minecraft
+            mcCommand()
+            y= 1
+            #wait a few seconds
+            time.sleep(2)
